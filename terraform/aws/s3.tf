@@ -1,11 +1,7 @@
 resource "aws_s3_bucket" "private_data" {
-  bucket        = "${local.resource_prefix.value}-data"
+  bucket        = "org-private-data"
   acl           = "public-read"
   force_destroy = true
-  tags = {
-    Name        = "${local.resource_prefix.value}-data"
-    Environment = local.resource_prefix.value
-  }
 }
 
 resource "aws_s3_bucket_object" "data_object" {
